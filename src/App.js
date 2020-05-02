@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './components/Home';
-import NoteList from './components/NoteList';
-import LoginRegister from './components/Login-Register';
+import Home from './pages/Home';
+import NoteList from './pages/NoteList';
+import Register from './pages/Register';
+import Login from './pages/Login';
+//import { auth } from './firebase/initFirebase';
 
 
 class App extends Component {
@@ -16,7 +17,8 @@ class App extends Component {
         <Router>
          
           <Switch>
-            <Route exact path='/' component={LoginRegister}/>
+            <Route exact path='/' component={Register}/>
+            <Route exact path='/login' component={Login}/>
             <Route exact path='/home' component={Home}/>
             <Route exact path='/signIn' component={NoteList}/>
             {/* <Route component={PageNotFound}/> */}
@@ -26,6 +28,11 @@ class App extends Component {
       </>
     );
   }
-}
+ }
   
-export default App;
+ export default App;
+
+
+
+
+
